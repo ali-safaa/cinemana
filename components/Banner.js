@@ -14,11 +14,19 @@ function Banner({ popularMovies }) {
       interval={2000}
     >
       {popularMovies.map((popularMovie) => (
-        <img
-          className="w-full object-cover md:h-[600px]"
-          src={`${baseUrl}${popularMovie.backdrop_path || poster_path}`}
-          alt=""
-        />
+        <div>
+          <img
+            className="w-full object-cover shadow-inner md:h-[600px]"
+            src={`${baseUrl}${popularMovie.backdrop_path || poster_path}`}
+            alt=""
+          />
+          <div className="absolute top-10 ml-5">
+            <h2>{popularMovie.original_title || title}</h2>
+            <p className="w-[300px] text-sm text-gray-300">
+              {popularMovie.overview}
+            </p>
+          </div>
+        </div>
       ))}
     </Carousel>
   )
