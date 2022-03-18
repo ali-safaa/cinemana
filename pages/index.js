@@ -29,13 +29,13 @@ export const getStaticProps = async () => {
   const [popularMoviesRes, popularKidsMoviesRes, whatMoviesTheatresRes] =
     await Promise.all([
       fetch(
-        'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=ccd8350b8da5358c7a52349074b2adc2'
+        `https://api.themoviedb.org/3/${process.env.MOST_POPLUAR_MOVIES}&${process.env.API_KEY}`
       ),
       fetch(
-        'https://api.themoviedb.org/3/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&api_key=ccd8350b8da5358c7a52349074b2adc2'
+        `https://api.themoviedb.org/3/${process.env.MOST_POPLUAR_MOVIES_KIDS}&${process.env.API_KEY}`
       ),
       fetch(
-        'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=ccd8350b8da5358c7a52349074b2adc2'
+        `https://api.themoviedb.org/3/${process.env.WHAT_MOVIES_THEATER}&${process.env.API_KEY}`
       ),
     ])
   const [popularMovies, popularKidsMovies, whatmoviesTheatres] =

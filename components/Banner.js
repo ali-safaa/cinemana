@@ -6,12 +6,12 @@ function Banner({ popularMovies }) {
 
   return (
     <Carousel
-      autoPlay
+      autoPlay={false}
       infiniteLoop
       showStatus={false}
-      showIndicators={true}
+      showIndicators={false}
       showThumbs={false}
-      interval={2000}
+      interval={5000}
     >
       {popularMovies.map((popularMovie) => (
         <div>
@@ -21,8 +21,10 @@ function Banner({ popularMovies }) {
             alt=""
           />
           <div className="absolute top-10 ml-5">
-            <h2>{popularMovie.original_title || title}</h2>
-            <p className="w-[300px] text-sm text-gray-300">
+            <h2 className="text-sm md:text-lg lg:text-4xl">
+              {popularMovie.original_title || title}
+            </h2>
+            <p className="w-[220px] text-sm text-gray-200 md:w-[400px] md:text-lg">
               {popularMovie.overview}
             </p>
           </div>
