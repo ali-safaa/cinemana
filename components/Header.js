@@ -1,6 +1,8 @@
+import { useSession, signIn, signOut } from 'next-auth/react'
 import React from 'react'
 
 function Header() {
+  const { data: session } = useSession()
   return (
     <div className="flex items-center justify-between px-5 py-5">
       <div className="flex items-center">
@@ -36,12 +38,22 @@ function Header() {
         />
       </div>
       <div className="ml-5 flex items-center space-x-3">
-        <h4>arabic</h4>
-        <img
-          className="h-[40px] w-[40px] rounded-full object-cover"
-          src="https://images.pexels.com/photos/9940538/pexels-photo-9940538.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          alt=""
-        />
+        <select className="border-none bg-gray-800 py-1 px-3 text-white outline-none">
+          <option>Arabic</option>
+          <option>English</option>
+        </select>
+        {!session ? (
+          <h4 className="cursor-pointer" onClick={() => signIn()}>
+            Signin
+          </h4>
+        ) : (
+          <img
+            onClick={() => signOut()}
+            className="h-[40px] w-[40px] cursor-pointer rounded-full object-cover"
+            src={session?.user?.image}
+            alt=""
+          />
+        )}
       </div>
     </div>
   )

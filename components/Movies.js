@@ -4,7 +4,7 @@ function Movies({ popularMovies, popularKidsMovies, whatmoviesTheatres }) {
   const baseUrl = 'https://image.tmdb.org/t/p/original/'
   return (
     <div className="mt-3 ml-5">
-      <h3 className="mb-3 text-sm md:text-2xl">popular Movies</h3>
+      <h3 className="mb-3 text-sm md:text-xl">popular Movies</h3>
       <div className="mb-3 flex items-center space-x-3 overflow-scroll">
         {popularMovies.map((popularMovie) => (
           <img
@@ -14,7 +14,7 @@ function Movies({ popularMovies, popularKidsMovies, whatmoviesTheatres }) {
           />
         ))}
       </div>
-      <h3 className="mb-3 text-sm md:text-2xl">popular Kids Movies</h3>
+      <h3 className="mb-3 text-sm md:text-xl">popular Kids Movies</h3>
       <div className="mb-3 flex items-center space-x-3 overflow-scroll">
         {popularKidsMovies.map((popularKidsMovie) => (
           <img
@@ -25,7 +25,7 @@ function Movies({ popularMovies, popularKidsMovies, whatmoviesTheatres }) {
         ))}
       </div>
 
-      <h3 className="mb-3 text-sm md:text-2xl">movies Theatres</h3>
+      <h3 className="mb-3 text-sm md:text-xl">movies Theatres</h3>
       <div className="flex items-center space-x-3 overflow-scroll">
         {whatmoviesTheatres.map((whatmoviesTheatre) => (
           <img

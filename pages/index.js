@@ -1,11 +1,13 @@
+import { useSession } from 'next-auth/react'
 import Head from 'next/head'
 import React from 'react'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 import Movies from '../components/Movies'
 function index({ popularMovies, popularKidsMovies, whatmoviesTheatres }) {
+  const { data: session } = useSession()
   return (
-    <div className="bg-black text-white">
+    <div className="font bg-black text-white">
       <Head>
         <link
           rel="stylesheet"

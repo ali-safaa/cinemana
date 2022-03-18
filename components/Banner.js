@@ -6,7 +6,7 @@ function Banner({ popularMovies }) {
 
   return (
     <Carousel
-      autoPlay={false}
+      autoPlay={true}
       infiniteLoop
       showStatus={false}
       showIndicators={false}

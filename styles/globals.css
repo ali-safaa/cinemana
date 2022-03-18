@@ -5,4 +5,7 @@
   * {
     margin: 0;
   }
+  .font {
+    font-family: 'Gill Sans', sans-serif;
+  }
 }
