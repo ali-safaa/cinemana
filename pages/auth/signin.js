@@ -10,11 +10,11 @@ export default function SignIn({ providers }) {
             src="/images/cinemana.svg"
             alt=""
           />
-          <h3 className="my-5 w-[220px] text-sm md:w-[300px] md:text-lg">
-            Welcome signin to watch best movies & series on platform cinemana
-          </h3>
+          <p className="text-md my-5 text-gray-400 md:text-lg">
+            Welcome to the best platform to watch movies & series on cinemana
+          </p>
           <button
-            className="mx-auto w-max cursor-pointer border-none bg-blue-500 px-7 py-2 text-lg font-semibold text-white md:text-xl"
+            className="mx-auto w-max cursor-pointer rounded-md  border-0 bg-transparent px-7 py-2 text-lg font-semibold text-blue-500 duration-300 hover:border hover:border-white"
             onClick={() => signIn(provider.id, { callbackUrl: '/' })}
           >
             Sign in with {provider.name}
